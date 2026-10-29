@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-slate-100 text-navy-900 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04';
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-teal-600 ring-offset-2 ring-offset-white;
+  }
+}
+
+@layer components {
+  .cf-card {
+    @apply rounded-card border border-slate-200 bg-white shadow-card;
+  }
+
+  .cf-label {
+    @apply mb-1.5 block text-sm font-medium text-navy-800;
+  }
+
+  .cf-input {
+    @apply block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-navy-900
+      placeholder:text-slate-400 focus:border-teal-600 focus:outline-none focus:ring-1 focus:ring-teal-600
+      disabled:cursor-not-allowed disabled:bg-slate-100;
+  }
+
+  .cf-input-error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500;
+  }
+
+  .cf-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium
+      transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .cf-btn-primary {
+    @apply cf-btn bg-navy-800 text-white hover:bg-navy-900;
+  }
+
+  .cf-btn-accent {
+    @apply cf-btn bg-teal-700 text-white hover:bg-teal-800;
+  }
+
+  .cf-btn-secondary {
+    @apply cf-btn border border-slate-300 bg-white text-navy-800 hover:bg-slate-50;
+  }
+
+  .cf-btn-danger {
+    @apply cf-btn border border-red-300 bg-white text-red-700 hover:bg-red-50;
+  }
+
+  .cf-btn-ghost {
+    @apply cf-btn text-navy-700 hover:bg-slate-100;
+  }
+
+  .cf-link {
+    @apply font-medium text-teal-700 underline-offset-2 hover:underline;
+  }
+}
