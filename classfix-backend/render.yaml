@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: classfix-api
+    runtime: node
+    rootDir: classfix-backend
+    buildCommand: npm install
+    startCommand: npm run start:prod
+    disk:
+      name: classfix-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: DATABASE_FILE
+        value: /data/classfix.db
+      - key: UPLOAD_DIR
+        value: /data/uploads
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 12h
+      - key: SEED_PASSWORD
+        value: classfix123
